@@ -102,7 +102,52 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2" data-path="./">
+        <li class="chapter " data-level="1.2" data-path="../golang/">
+            
+                <a href="../golang/">
+            
+                    
+                    golang基础知识
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../golang/Sprintf.html">
+            
+                <a href="../golang/Sprintf.html">
+            
+                    
+                    fmt.Sprintf格式化使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../golang/stringjoin.html">
+            
+                <a href="../golang/stringjoin.html">
+            
+                    
+                    golang 字符串拼接
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="./">
             
                 <a href="./">
             
@@ -116,7 +161,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.2.1" data-path="noun.html">
+        <li class="chapter " data-level="1.3.1" data-path="noun.html">
             
                 <a href="noun.html">
             
@@ -129,7 +174,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.2.2" data-path="unit.html">
+        <li class="chapter active" data-level="1.3.2" data-path="unit.html">
             
                 <a href="unit.html">
             
@@ -142,7 +187,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.3" data-path="performance.html">
+        <li class="chapter " data-level="1.3.3" data-path="performance.html">
             
                 <a href="performance.html">
             
@@ -155,7 +200,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.4" data-path="pprof.html">
+        <li class="chapter " data-level="1.3.4" data-path="pprof.html">
             
                 <a href="pprof.html">
             
@@ -219,6 +264,64 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="golang&#x5355;&#x5143;&#x6D4B;&#x8BD5;">golang&#x5355;&#x5143;&#x6D4B;&#x8BD5;</h1>
+<p><strong>&#x683C;&#x5F0F;</strong></p>
+<ul>
+<li>&#x4E00;&#x822C;&#x6D4B;&#x8BD5;&#x4EE3;&#x7801;&#x653E;&#x5728;*_test.go&#x6587;&#x4EF6;&#x4E2D;&#xFF0C;&#x4E0E;&#x88AB;&#x6D4B;&#x4EE3;&#x7801;&#x653E;&#x4E8E;&#x540C;&#x4E00;&#x4E2A;&#x5305;&#x4E2D;</li>
+<li>&#x53C2;&#x6570;&#x7C7B;&#x578B;*testing.T</li>
+<li>&#x6D4B;&#x8BD5;&#x51FD;&#x6570;&#x540D;&#x79F0;&#x683C;&#x5F0F;&#x662F;&#xFF1A;<code>Test[^a-z]</code> &#x5373;&#x4EE5;Test&#x5F00;&#x5934;&#xFF0C;&#x8DDF;&#x4E0A;&#x975E;&#x5C0F;&#x5199;&#x5B57;&#x6BCD;&#x5F00;&#x5934;&#x7684;&#x5B57;&#x7B26;&#x4E32;</li>
+<li>&#x6BCF;&#x4E2A;&#x6D4B;&#x8BD5;&#x51FD;&#x6570;&#x90FD;&#x63A5;&#x53D7;&#x4E00;&#x4E2A;*testing.T&#x7C7B;&#x578B;&#x53C2;&#x6570;&#xFF0C;&#x7528;&#x4E8E;&#x8F93;&#x51FA;&#x4FE1;&#x606F;&#x6216;&#x4E2D;&#x65AD;&#x6D4B;&#x8BD5;&#x3002;</li>
+</ul>
+<p><strong>&#x6D4B;&#x8BD5;&#x65B9;&#x6CD5;</strong></p>
+<ul>
+<li>Fail: &#x6807;&#x8BB0;&#x5931;&#x8D25;&#xFF0C;&#x4F46;&#x7EE7;&#x7EED;&#x6267;&#x884C;&#x5F53;&#x524D;&#x6D4B;&#x8BD5;&#x51FD;&#x6570;</li>
+<li>FailNow: &#x5931;&#x8D25;&#xFF0C;&#x7ACB;&#x5373;&#x7EC8;&#x6B62;&#x5F53;&#x524D;&#x6D4B;&#x8BD5;&#x51FD;&#x6570;&#x6267;&#x884C;</li>
+<li>Log: &#x8F93;&#x51FA;&#x9519;&#x8BEF;&#x4FE1;&#x606F;</li>
+<li>Error: Fail + Log</li>
+<li>Fatal: FailNow + Log</li>
+<li>Skip: &#x8DF3;&#x8FC7;&#x5F53;&#x524D;&#x51FD;&#x6570;&#xFF0C;&#x901A;&#x5E38;&#x7528;&#x4E8E;&#x672A;&#x5B8C;&#x6210;&#x7684;&#x6D4B;&#x8BD5;&#x7528;&#x4F8B;</li>
+</ul>
+<p><strong>&#x4EE3;&#x7801;</strong></p>
+<pre><code class="lang-go"><span class="hljs-keyword">package</span> test
+<span class="hljs-keyword">import</span> (
+    <span class="hljs-string">&quot;testing&quot;</span>
+)
+
+<span class="hljs-keyword">func</span> Add(a, b <span class="hljs-keyword">int</span>) <span class="hljs-keyword">int</span> {
+    <span class="hljs-keyword">return</span> a + b
+}
+
+<span class="hljs-keyword">func</span> TestAdd1(t *testing.T) {
+    <span class="hljs-keyword">if</span> Add(<span class="hljs-number">2</span>, <span class="hljs-number">3</span>) != <span class="hljs-number">5</span> {
+        t.Error(<span class="hljs-string">&quot;Error  5&quot;</span>)
+    } <span class="hljs-keyword">else</span> {
+        t.Log(<span class="hljs-string">&quot;result is right&quot;</span>)
+    }
+}
+
+<span class="hljs-keyword">func</span> TestAdd2(t *testing.T) {
+    <span class="hljs-keyword">if</span> Add(<span class="hljs-number">2</span>, <span class="hljs-number">3</span>) != <span class="hljs-number">6</span> {
+        t.Fatal(<span class="hljs-string">&quot;result 6&quot;</span>)
+    } <span class="hljs-keyword">else</span> {
+        t.Log(<span class="hljs-string">&quot;result is right&quot;</span>)
+    }
+}
+
+<span class="hljs-keyword">func</span> TestAdd3(t *testing.T) {
+    <span class="hljs-comment">//t.Skip()</span>
+    <span class="hljs-keyword">if</span> Add(<span class="hljs-number">2</span>, <span class="hljs-number">3</span>) != <span class="hljs-number">6</span> {
+        t.Fail()
+    }
+    t.Log(<span class="hljs-string">&quot;111&quot;</span>)
+}
+</code></pre>
+<p><strong>&#x67E5;&#x770B;&#x8FD0;&#x884C;&#x7ED3;&#x679C;</strong></p>
+<pre><code>go test   &#x52A8;&#x641C;&#x96C6;&#x6240;&#x6709;&#x7684;&#x6D4B;&#x8BD5;&#x6587;&#x4EF6;&#xFF08;*_test.go&#xFF09;&#xFF0C;&#x63D0;&#x53D6;&#x5168;&#x90E8;&#x6D4B;&#x8BD5;&#x51FD;&#x6570;
+</code></pre><ul>
+<li>-v&#xFF1A;&#x663E;&#x793A;&#x6240;&#x6709;&#x6D4B;&#x8BD5;&#x51FD;&#x6570;&#x8FD0;&#x884C;&#x7EC6;&#x8282; </li>
+<li>-run&#xFF1A;&#x6307;&#x5B9A;&#x8981;&#x6267;&#x884C;&#x7684;&#x6D4B;&#x8BD5;&#x51FD;&#x6570;</li>
+<li>-count &#x8FD0;&#x884C;&#x591A;&#x5C11;&#x6B21;</li>
+<li>args  &#x53C2;&#x6570; <code>os.Args</code> &#x83B7;&#x53D6;&#x53C2;&#x6570;</li>
+</ul>
 
                                 
                                 </section>
@@ -262,7 +365,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"golang单元测试","level":"1.2.2","depth":2,"next":{"title":"golang性能测试","level":"1.2.3","depth":2,"path":"knowledge/performance.md","ref":"knowledge/performance.md","articles":[]},"previous":{"title":"名词解释","level":"1.2.1","depth":2,"path":"knowledge/noun.md","ref":"knowledge/noun.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"knowledge/unit.md","mtime":"2019-03-04T12:14:17.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-03-04T12:14:20.550Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"golang单元测试","level":"1.3.2","depth":2,"next":{"title":"golang性能测试","level":"1.3.3","depth":2,"path":"knowledge/performance.md","ref":"knowledge/performance.md","articles":[]},"previous":{"title":"名词解释","level":"1.3.1","depth":2,"path":"knowledge/noun.md","ref":"knowledge/noun.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"knowledge/unit.md","mtime":"2019-03-07T06:33:28.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-03-19T11:09:36.104Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
