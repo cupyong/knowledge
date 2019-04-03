@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>知识分享 · GitBook</title>
+        <title>crontab · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,10 +57,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="noun.html" />
+    <link rel="next" href="../knowledge/" />
     
     
-    <link rel="prev" href="../linux/crontab.html" />
+    <link rel="prev" href="./" />
     
 
     </head>
@@ -179,9 +179,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4" data-path="../linux/">
+        <li class="chapter " data-level="1.4" data-path="./">
             
-                <a href="../linux/">
+                <a href="./">
             
                     
                     linux基础知识
@@ -193,9 +193,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.4.1" data-path="../linux/crontab.html">
+        <li class="chapter active" data-level="1.4.1" data-path="crontab.html">
             
-                <a href="../linux/crontab.html">
+                <a href="crontab.html">
             
                     
                     crontab
@@ -211,9 +211,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.5" data-path="./">
+        <li class="chapter " data-level="1.5" data-path="../knowledge/">
             
-                <a href="./">
+                <a href="../knowledge/">
             
                     
                     知识分享
@@ -225,9 +225,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.5.1" data-path="noun.html">
+        <li class="chapter " data-level="1.5.1" data-path="../knowledge/noun.html">
             
-                <a href="noun.html">
+                <a href="../knowledge/noun.html">
             
                     
                     名词解释
@@ -238,9 +238,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.2" data-path="unit.html">
+        <li class="chapter " data-level="1.5.2" data-path="../knowledge/unit.html">
             
-                <a href="unit.html">
+                <a href="../knowledge/unit.html">
             
                     
                     golang单元测试
@@ -251,9 +251,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.3" data-path="performance.html">
+        <li class="chapter " data-level="1.5.3" data-path="../knowledge/performance.html">
             
-                <a href="performance.html">
+                <a href="../knowledge/performance.html">
             
                     
                     golang性能测试
@@ -264,9 +264,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.4" data-path="pprof.html">
+        <li class="chapter " data-level="1.5.4" data-path="../knowledge/pprof.html">
             
-                <a href="pprof.html">
+                <a href="../knowledge/pprof.html">
             
                     
                     golang性能分析
@@ -312,7 +312,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >知识分享</a>
+        <a href=".." >crontab</a>
     </h1>
 </div>
 
@@ -327,7 +327,18 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="&#x77E5;&#x8BC6;&#x5206;&#x4EAB;">&#x77E5;&#x8BC6;&#x5206;&#x4EAB;</h1>
+                                <h1 id="crontab">crontab</h1>
+<p><strong>&#x5B89;&#x88C5;&#x90E8;&#x7F72;</strong></p>
+<pre><code class="lang-Shell"> yum -y install vixie-cron
+ yum -y install crontabs
+</code></pre>
+<p><strong>&#x914D;&#x7F6E;</strong></p>
+<pre><code class="lang-shell">service crond start     //&#x542F;&#x52A8;&#x670D;&#x52A1;
+service crond stop      //&#x5173;&#x95ED;&#x670D;&#x52A1;
+service crond restart   //&#x91CD;&#x542F;&#x670D;&#x52A1;
+service crond reload    //&#x91CD;&#x65B0;&#x8F7D;&#x5165;&#x914D;&#x7F6E;
+service crond status    //&#x67E5;&#x770B;crontab&#x670D;&#x52A1;&#x72B6;&#x6001;
+</code></pre>
 
                                 
                                 </section>
@@ -355,12 +366,12 @@
 
             
                 
-                <a href="../linux/crontab.html" class="navigation navigation-prev " aria-label="Previous page: crontab">
+                <a href="./" class="navigation navigation-prev " aria-label="Previous page: linux基础知识">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="noun.html" class="navigation navigation-next " aria-label="Next page: 名词解释">
+                <a href="../knowledge/" class="navigation navigation-next " aria-label="Next page: 知识分享">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -371,7 +382,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"知识分享","level":"1.5","depth":1,"next":{"title":"名词解释","level":"1.5.1","depth":2,"path":"knowledge/noun.md","ref":"knowledge/noun.md","articles":[]},"previous":{"title":"crontab","level":"1.4.1","depth":2,"path":"linux/crontab.md","ref":"linux/crontab.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"knowledge/README.md","mtime":"2019-02-28T07:45:08.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-04-03T06:51:48.006Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"crontab","level":"1.4.1","depth":2,"next":{"title":"知识分享","level":"1.5","depth":1,"path":"knowledge/README.md","ref":"knowledge/README.md","articles":[{"title":"名词解释","level":"1.5.1","depth":2,"path":"knowledge/noun.md","ref":"knowledge/noun.md","articles":[]},{"title":"golang单元测试","level":"1.5.2","depth":2,"path":"knowledge/unit.md","ref":"knowledge/unit.md","articles":[]},{"title":"golang性能测试","level":"1.5.3","depth":2,"path":"knowledge/performance.md","ref":"knowledge/performance.md","articles":[]},{"title":"golang性能分析","level":"1.5.4","depth":2,"path":"knowledge/pprof.md","ref":"knowledge/pprof.md","articles":[]}]},"previous":{"title":"linux基础知识","level":"1.4","depth":1,"path":"linux/README.md","ref":"linux/README.md","articles":[{"title":"crontab","level":"1.4.1","depth":2,"path":"linux/crontab.md","ref":"linux/crontab.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"linux/crontab.md","mtime":"2019-03-20T11:24:27.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-04-03T06:51:48.006Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
